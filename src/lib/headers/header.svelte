@@ -44,6 +44,7 @@
         --width: ;
         --py: 10px;
         --px: 20px;
+        --gap: 50px;
         --margin: auto;
     }
     
@@ -66,6 +67,7 @@
         background-color: var(--background-color);
         color: var(--color-main);
         margin: var(--margin);
+        font-weight: bold;
     }
 
     header > * {
@@ -88,7 +90,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        gap: 50px;
+        gap: var(--gap);
     }
 
     header > nav > a {
