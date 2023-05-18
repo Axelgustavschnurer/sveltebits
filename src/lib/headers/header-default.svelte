@@ -7,23 +7,45 @@
 
     function removeActiveClass() {
         activeLink = null;
-    }
+    } 
+
+    export let title = 'Title Ipsum'
+    export let links = ['Link Ipsum', 'Link Ipsum', 'Link Ipsum']
+    export let callToAction = 'Call To Action'
+    export let imageSource = 'logo.svg'
+    export let displayCallToAction = true
+
 </script>
 
 <header>
-    <div>
-        <img src="" alt="">
-        <h1><a href='./'>Title Ipsum</a></h1>
-    </div>
+    <h1>
+        <a href='./'>
+            <img src={imageSource} alt="">
+            {title}
+        </a>
+    </h1>
     <nav>
-        <a href="./" class={activeLink === 'link1' ? 'active' : ''} on:click={() => setActive('link1')}>Link Ipsum</a>
-        <a href="./" class={activeLink === 'link2' ? 'active' : ''} on:click={() => setActive('link2')}>Link Ipsum</a>
-        <a href="./" class={activeLink === 'link3' ? 'active' : ''} on:click={() => setActive('link3')}>Link Ipsum</a>
-        <a href="./" class="call-to-action" on:click={removeActiveClass}>Link Ipsum</a>
+        {#each links as link, i}
+            <a href="./" class={activeLink === `link${i}` ? 'active' : ''} on:click={() => setActive(`link${i}`)}>{link}</a>
+        {/each}
+        {#if displayCallToAction==true}
+            <a href="./" class="call-to-action" on:click={removeActiveClass}>{callToAction}</a>
+        {/if}
     </nav>
 </header>
 
 <style>
+
+    :root {
+        --background-color: white;
+        --color-main: black;
+        --color-second: white;
+        --color-accent: cornflowerblue;
+        --width: ;
+        --py: 10px;
+        --px: 20px;
+        --margin: auto;
+    }
     
     * {
         font-family: Arial, Helvetica, sans-serif;
@@ -37,10 +59,13 @@
     header {
         display: flex;
         align-items: center;
-        padding: 10px 20px;
+        padding: var(--py) var(--px);
         top: 0;
         position: sticky;
-        box-shadow: 0 0 10px gray;
+        width: var(--width);
+        background-color: var(--background-color);
+        color: var(--color-main);
+        margin: var(--margin);
     }
 
     header > * {
@@ -48,11 +73,12 @@
     }
 
     img {
-        width: 50px;
-        height: 50px;
+        width: 75px;
+        height: 75px;
     }
 
-    header > div {
+    header > h1 > a {
+        width: fit-content;
         display: flex;
         align-items: center;
         gap: 10px;
@@ -61,7 +87,8 @@
     header > nav {
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: flex-end;
+        gap: 50px;
     }
 
     header > nav > a {
@@ -70,23 +97,25 @@
 
     header > nav > a:hover {
         margin-bottom: -3px;
-        border-bottom: 3px solid green;
+        border-bottom: 3px solid var(--color-accent);
     }
 
     .call-to-action {
         padding: 15px 30px;
         border-radius: 5px;
-        background-color: green;
+        background-color: var(--color-accent);
+        color: var(--color-second);
     }
 
     .call-to-action:hover {
         margin-bottom: unset;
         border-bottom: unset;
+        outline: 3px solid var(--color-main);
     }
 
     .active {
         margin-bottom: -3px;
-        border-bottom: 3px solid green;
+        border-bottom: 3px solid var(--color-accent);
     }
 
 </style>

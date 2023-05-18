@@ -2,7 +2,12 @@
     import Header from '../lib/headers/header-default.svelte'
 </script>
 
-<Header></Header>
+<Header 
+    title={'SvelteBits'}
+    links={['Learn More']}
+    callToAction={'Download The Package'}
+    --width=80%
+/>
 
 <style>
     :global(body) {
