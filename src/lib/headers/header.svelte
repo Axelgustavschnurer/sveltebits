@@ -1,13 +1,4 @@
 <script>
-    let activeLink = '';
-
-    function setActive(link) {
-        activeLink = link;
-    }
-
-    function removeActiveClass() {
-        activeLink = null;
-    } 
 
     export let title = 'Title Ipsum'
     export let links = ['Link Ipsum', 'Link Ipsum', 'Link Ipsum']
@@ -15,34 +6,45 @@
     export let imageSource = 'logo.svg'
     export let displayCallToAction = true
 
+    let activeLink
+    let y
+	
 </script>
 
-<header>
-    <h1>
-        <a href='./'>
-            <img src={imageSource} alt="">
-            {title}
-        </a>
-    </h1>
-    <nav>
-        {#each links as link, i}
-            <a href="./" class={activeLink === `link${i}` ? 'active' : ''} on:click={() => setActive(`link${i}`)}>{link}</a>
-        {/each}
-        {#if displayCallToAction==true}
-            <a href="./" class="call-to-action" on:click={removeActiveClass}>{callToAction}</a>
-        {/if}
-    </nav>
+<svelte:window bind:scrollY={y} />
+
+<header class="{y > 0 ? 'scrolled' : ''}">
+    <div>
+        <h1>
+            <a href='./'>
+                <img src={imageSource} alt="">
+                {title}
+            </a>
+        </h1>
+        <nav>
+            {#each links as link, i}
+                <a href="./" 
+                class={activeLink === `link${i}` ? 'active' : ''} 
+                on:click={() => activeLink = `link${i}`}>{link}</a>
+            {/each}
+            {#if displayCallToAction==true}
+                <a href="./" class="call-to-action" 
+                on:click={() => activeLink = ''}>{callToAction}</a>
+            {/if}
+        </nav>
+    </div>
 </header>
 
 <style>
 
     :root {
         --background-color: white;
+        --scroll-color: white;
         --color-main: black;
         --color-second: white;
         --color-accent: cornflowerblue;
         --width: ;
-        --py: 10px;
+        --py: 0px;
         --px: 20px;
         --gap: 50px;
         --margin: auto;
@@ -58,19 +60,27 @@
     }
 
     header {
-        display: flex;
-        align-items: center;
         padding: var(--py) var(--px);
         top: 0;
         position: sticky;
-        width: var(--width);
         background-color: var(--background-color);
         color: var(--color-main);
-        margin: var(--margin);
         font-weight: bold;
+        z-index: 9999;
     }
 
-    header > * {
+    .scrolled {
+		background-color: var(--scroll-color);
+	}
+
+    header > div {
+        display: flex;
+        align-items: center;
+        margin: var(--margin);
+        width: var(--width);
+    }
+
+    header > div > * {
         flex-grow: 1;
     }
 
@@ -79,25 +89,25 @@
         height: 75px;
     }
 
-    header > h1 > a {
+    header > div > h1 > a {
         width: fit-content;
         display: flex;
         align-items: center;
         gap: 10px;
     }
 
-    header > nav {
+    header > div > nav {
         display: flex;
         align-items: center;
         justify-content: flex-end;
         gap: var(--gap);
     }
 
-    header > nav > a {
+    header > div > nav > a {
         padding: 8px;
     }
 
-    header > nav > a:hover {
+    header > div > nav > a:hover {
         margin-bottom: -3px;
         border-bottom: 3px solid var(--color-accent);
     }
