@@ -4,14 +4,17 @@
     export let linkText = 'Link Text'
 </script>
 
-<main>
-    <div>
-        <h1>{title}</h1>
-        <p>{infoText}</p>
-        <a href="./">{linkText}</a>
-    </div>
-    <img src="background.png" alt="">
-</main>
+<div style="position: relative;">
+    <main>
+        <div>
+            <h1>{title}</h1>
+            <p>{infoText}</p>
+            <a href="./" style="background-color: indianred;color:white;padding:15px 30px;border-radius:5px;">{linkText}</a>
+        </div>
+        <img src="background.png" alt="">
+    </main>
+    <img src="wave.svg" alt="" style="position: absolute; bottom:0;left:0;z-index:0;"/>
+</div>
 
 <style>
 
@@ -30,7 +33,9 @@
     }
 
     main {
-        padding: 50px;
+        position: relative;
+        z-index: 1;
+        padding: 150px 50px;
         margin: auto;
         width: var(--width);
         display: grid;

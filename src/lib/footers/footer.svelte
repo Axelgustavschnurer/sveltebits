@@ -32,7 +32,7 @@
     }
 
     footer {
-        border-top: 3px solid var(--color-accent);
+        border-top: 6px solid var(--color-accent);
         padding: 25px;
         display: flex;
         justify-content: space-around;
