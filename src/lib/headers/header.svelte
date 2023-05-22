@@ -3,8 +3,8 @@
     export let title = 'Title Ipsum'
     export let links = ['Link Ipsum', 'Link Ipsum', 'Link Ipsum']
     export let callToAction = 'Call To Action'
-    export let imageSource = 'logo.svg'
     export let displayCallToAction = true
+    export let imageSource = ''
 
     let activeLink
     let y
