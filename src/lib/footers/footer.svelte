@@ -27,15 +27,12 @@
         --color-accent: cornflowerblue;
     }
 
-    * {
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
     footer {
         border-top: 6px solid var(--color-accent);
         padding: 25px;
         display: flex;
         justify-content: space-around;
+        background-color: var(--background-color);
     }
 
     footer > div {

@@ -1,14 +1,19 @@
 <script>
 
-    export let title = 'Title Ipsum'
-    export let links = ['Link Ipsum', 'Link Ipsum', 'Link Ipsum']
+    export let title = {title: 'Title Ipsum', href: './'}
+    export let links = [
+        {linkTitle: 'Link Ipsum', href: './'}, 
+        {linkTitle: 'Link Ipsum', href: './'}, 
+        {linkTitle: 'Link Ipsum', href: './'} 
+    ]
     export let callToAction = 'Call To Action'
     export let displayCallToAction = true
     export let imageSource = ''
+    export let altText = ''
 
     let activeLink
     let y
-	
+
 </script>
 
 <svelte:window bind:scrollY={y} />
@@ -16,16 +21,14 @@
 <header class="{y > 0 ? 'scrolled' : ''}">
     <div>
         <h1>
-            <a href='./'>
-                <img src={imageSource} alt="">
-                {title}
+            <a href={title.href}>
+                <img src={imageSource} alt={altText}>
+                {title.title}
             </a>
         </h1>
         <nav>
             {#each links as link, i}
-                <a href="./" 
-                class={activeLink === `link${i}` ? 'active' : ''} 
-                on:click={() => activeLink = `link${i}`}>{link}</a>
+                <a href={link.href} class={activeLink === `link${i}` ? 'active' : ''} on:click={() => activeLink = `link${i}`}>{link.linkTitle}</a>
             {/each}
             {#if displayCallToAction==true}
                 <a href="./" class="call-to-action" 
@@ -49,10 +52,6 @@
         --gap: 50px;
         --margin: auto;
     }
-    
-    * {
-        font-family: Arial, Helvetica, sans-serif;
-    }
 
     a {
         text-decoration: unset;
@@ -67,10 +66,12 @@
         color: var(--color-main);
         font-weight: bold;
         z-index: 9999;
+        transition: background-color .2s;
     }
 
     .scrolled {
 		background-color: var(--scroll-color);
+        transition: background-color .2s;
 	}
 
     header > div {
@@ -113,6 +114,7 @@
     }
 
     .call-to-action {
+        text-align: center;
         padding: 15px 30px;
         border-radius: 5px;
         background-color: var(--color-accent);
