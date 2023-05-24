@@ -56,3 +56,27 @@ To publish your library to [npm](https://www.npmjs.com):
 ```bash
 npm publish
 ```
+
+## Components
+
+### Headers
+
+#### [header.svelte](./src/lib/headers/header.svelte)
+
+title = {title: '', href: ''}
+links = [{linkTitle: '', href: ''}]
+callToAction = ''
+displayCallToAction = true/false
+imageSource = ''
+export let altText = ''
+
+--background-color: ;
+--scroll-color: ;
+--color-main: ;
+--color-second: ;
+--color-accent: ;
+--width: ;
+--py: ;
+--px: ;
+--gap: ;
+--margin: ;
