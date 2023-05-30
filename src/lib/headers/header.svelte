@@ -1,18 +1,21 @@
 <script>
+    import Link from '../links/link.svelte'
 
     export let title = {title: 'Title Ipsum', href: './'}
+    export let imageSource = ''
+    export let altText = ''
+
     export let links = [
         {linkTitle: 'Link Ipsum', href: './'}, 
         {linkTitle: 'Link Ipsum', href: './'}, 
         {linkTitle: 'Link Ipsum', href: './'} 
     ]
+
     export let callToAction = 'Call To Action'
     export let displayCallToAction = true
-    export let imageSource = ''
-    export let altText = ''
 
-    let activeLink
     let y
+    let activeLink
 
 </script>
 
@@ -20,26 +23,32 @@
 
 <header class="{y > 0 ? 'scrolled' : ''}">
     <div>
-        <h1>
+        <h2>
             <a href={title.href}>
                 <img src={imageSource} alt={altText}>
                 {title.title}
             </a>
-        </h1>
+        </h2>
         <nav>
-            {#each links as link, i}
-                <a href={link.href} class={activeLink === `link${i}` ? 'active' : ''} on:click={() => activeLink = `link${i}`}>{link.linkTitle}</a>
+            {#each links as link}
+                <Link 
+                    text={link.linkTitle} 
+                    href={link.href} 
+                />
+                <!--<a href={link.href} class={activeLink === `link${i}` ? 'active' : ''} on:click={() => activeLink = `link${i}`}>{link.linkTitle}</a>-->
             {/each}
-            {#if displayCallToAction==true}
-                <a href="./" class="call-to-action" 
-                on:click={() => activeLink = ''}>{callToAction}</a>
-            {/if}
         </nav>
+        {#if displayCallToAction==true}
+        <div class="call-to-action-wrapper">
+            <a href="./" class="call-to-action-secondary">Button Ipsum</a> 
+            <a href="./" class="call-to-action" 
+            on:click={() => activeLink = ''}>{callToAction}</a>
+        </div>
+    {/if}
     </div>
 </header>
 
 <style>
-
     :root {
         --background-color: white;
         --scroll-color: white;
@@ -51,6 +60,10 @@
         --px: 20px;
         --gap: 50px;
         --margin: auto;
+        --coa-pos: flex-end;
+        --coa-flex-grow: 0;
+        --nav-px: 25px;
+        --h2-flex-grow: 1;
     }
 
     a {
@@ -81,16 +94,16 @@
         width: var(--width);
     }
 
-    header > div > * {
-        flex-grow: 1;
-    }
-
     img {
         width: 75px;
         height: 75px;
     }
 
-    header > div > h1 > a {
+    header > div > h2 {
+        flex-grow: var(--h2-flex-grow);
+    }
+
+    header > div > h2 > a {
         width: fit-content;
         display: flex;
         align-items: center;
@@ -100,19 +113,22 @@
     header > div > nav {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
         gap: var(--gap);
+        padding: 0 var(--nav-px);
     }
-
-    header > div > nav > a {
-        padding: 8px;
-    }
-
-    header > div > nav > a:hover {
+    .active {
         margin-bottom: -3px;
         border-bottom: 3px solid var(--color-accent);
     }
 
+    .call-to-action-wrapper {
+        flex-grow: var(--coa-flex-grow);
+        display: flex;
+        gap: 25px;
+        justify-content: var(--coa-pos);
+        align-items: center;
+    }
     .call-to-action {
         text-align: center;
         padding: 15px 30px;
@@ -121,15 +137,17 @@
         color: var(--color-second);
     }
 
-    .call-to-action:hover {
+    .call-to-action-secondary {
+        text-align: center;
+        padding: 15px 30px;
+        border-radius: 5px;
+        color: var(--color-main);
+        box-shadow: inset 0px 0px 0px 3px var(--color-accent);
+    }
+    .call-to-action:hover, .call-to-action-secondary:hover {
         margin-bottom: unset;
         border-bottom: unset;
         outline: 3px solid var(--color-main);
-    }
-
-    .active {
-        margin-bottom: -3px;
-        border-bottom: 3px solid var(--color-accent);
     }
 
 </style>

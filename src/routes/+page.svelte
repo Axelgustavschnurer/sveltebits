@@ -7,14 +7,18 @@
     title={{title: 'Title Ipsum', href: './'}}
     callToAction='Button Ipsum'
     links={[
-        {linkTitle: 'Read More', href: './'}
+        {linkTitle: 'Read More', href: './'},
+        {linkTitle: 'Read More', href: './'},
+        {linkTitle: 'Read More', href: './'},
+        {linkTitle: 'Read More', href: './'},
     ]}
+    --h2-flex-grow=1
+    --coa-flex-grow=1
     --width=80%
     --background-color=transparent
 />
 
 <main style="height: 200vh;">
-
 </main>
 
 <Footer />
