@@ -19,6 +19,7 @@
         padding: var(--padding);
         color: var(--color);
         text-decoration: none;
+        width: fit-content; /* Maybe not? */
     }
 
     a:hover {
