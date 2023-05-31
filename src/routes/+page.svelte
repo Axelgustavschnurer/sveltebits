@@ -5,7 +5,7 @@
 
 <Header 
     title={{title: 'Title Ipsum', href: './'}}
-    callToAction='Button Ipsum'
+    callToAction={{linkTitle: 'Button Ipsum', href: './'}}
     links={[
         {linkTitle: 'Read More', href: './'},
         {linkTitle: 'Read More', href: './'},

@@ -11,7 +11,7 @@
         {linkTitle: 'Link Ipsum', href: './'} 
     ]
 
-    export let callToAction = 'Call To Action'
+    export let callToAction = {linkTitle: 'Call To Action', href: './'}
     export let displayCallToAction = true
 
     let y
@@ -58,8 +58,8 @@
         {#if displayCallToAction==true}
             <div class="call-to-action-wrapper">
                 <!-- <a href="./" class="call-to-action-secondary">Button Ipsum</a> Keep working later --> 
-                <a href="./" class="call-to-action" 
-                on:click={() => activeLink = ''}>{callToAction}</a>
+                <a href={callToAction.href} class="call-to-action" 
+                on:click={() => activeLink = ''}>{callToAction.linkTitle}</a>
             </div>
         {/if}
     </div>
