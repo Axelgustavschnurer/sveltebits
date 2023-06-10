@@ -1,5 +1,6 @@
 <script>
     import Link from '../links/link.svelte'
+    import Hamburger from '../menus/hamburger.svelte';
 
     export let title = {title: 'Title Ipsum', href: './'}
     export let imageSource = ''
@@ -23,6 +24,8 @@
 
 <header class="{y > 0 ? 'scrolled' : ''}">
     <div>
+        <Hamburger></Hamburger>
+        <!--
         <div id="menuToggle">
             <input type="checkbox" />
             <span></span>
@@ -30,15 +33,15 @@
             <span></span>
             <ul id="menu">
                 {#each links as link, i}
-                    <!--
                     <Link 
                         text={link.linkTitle} 
                         href={link.href} 
-                    />-->
+                    />
                     <a href={link.href} class={activeLink === `link${i}` ? 'active' : ''} on:click={() => activeLink = `link${i}`}>{link.linkTitle}</a>
                 {/each}
             </ul>
         </div>
+        -->
         <h2>
             <a href={title.href}>
                 <img src={imageSource} alt={altText}>

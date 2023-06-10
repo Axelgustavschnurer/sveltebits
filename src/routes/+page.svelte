@@ -1,7 +1,12 @@
 <script>
     import Header from '../lib/headers/header.svelte'
+    import Hamburger from '../lib/menus/hamburger.svelte';
     import Footer from '../lib/footers/footer.svelte'
 </script>
+
+<!--
+<Hamburger></Hamburger>
+-->
 
 <Header 
     title={{title: 'Title Ipsum', href: './'}}
@@ -17,6 +22,7 @@
     --width=80%
     --background-color=transparent
 />
+
 
 <main style="height: 200vh;">
 </main>
