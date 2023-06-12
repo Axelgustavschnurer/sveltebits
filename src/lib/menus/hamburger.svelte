@@ -1,43 +1,73 @@
 <script>
 
+export let links = [
+    {linkTitle: 'Link Ipsum', href: './'}, 
+    {linkTitle: 'Link Ipsum', href: './'}, 
+    {linkTitle: 'Link Ipsum', href: './'} 
+]
+
 </script>
 
 <div>
     <input type="checkbox">
+    <svg viewBox="0 0 100 80" width="30" height="30">
+        <rect width="100" height="10"></rect>
+        <rect y="30" width="100" height="10"></rect>
+        <rect y="60" width="100" height="10"></rect>
+    </svg>
     <nav>
-        <a href="./">Test</a>
-        <a href="./">Test</a>
-        <a href="./">Test</a>
-        <a href="./">Test</a>
-        <a href="./">Test</a>
-        <a href="./">Test</a>
+        {#each links as link, i}
+            <a href={link.href}>{link.linkTitle}</a>
+        {/each}
     </nav>
 </div>
 
 <style>
 
+
     div {
+        /*
+            Oh i see if you set a position on this div it means that the "nearest
+            positioned ancestor" of the navbar is this div instead of the header. 
+            This will break shit so don't do that. 
+        */
         padding: 25px;
     }
 
     input[type="checkbox"] {
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
         margin: 0;
         padding: 0;
         cursor: pointer;
+        
+        /* Temp maybe (hopefully)*/
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        opacity: 0;
     }
 
-    input[type="checkbox"]:checked + nav {
+    input[type="checkbox"]:checked ~ nav {
         display: block;
     }
 
     nav {
         display: none;
         position: absolute;
-        /* Why does top 100% work? */
         width: 100%;
         top: 100%;
+        /* 
+            Assuming that the menu is located inside an element containing a position of  
+            absolute, fixed, relative or sticky the top: 100%; value will place the 
+            navbar beneath the parent element. This means that it works as it should
+            when placed in a parent element that is positioned. 
+            Why is it like this? I don't know, this shit should not work but here is a link
+            explaining it i think?: https://www.w3schools.com/cssref/pr_pos_top.php#:~:text=The%20top%20property%20affects%20the,of%20its%20nearest%20positioned%20ancestor.
+        */
+        /*
+            Actually it kinda makes perfect sense, refer to comment on div styling above
+        */
         left: 0;
     }
 
@@ -45,6 +75,7 @@
         display: block;
         padding: 15px;
         background-color: #fefefe;
+        border-bottom: 2px solid #ececec;
     }
 
     nav > a:hover {

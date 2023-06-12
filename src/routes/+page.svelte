@@ -4,10 +4,10 @@
     import Footer from '../lib/footers/footer.svelte'
 </script>
 
+<header style="position: sticky;">
+    <Hamburger></Hamburger>
+</header>
 <!--
-<Hamburger></Hamburger>
--->
-
 <Header 
     title={{title: 'Title Ipsum', href: './'}}
     callToAction={{linkTitle: 'Button Ipsum', href: './'}}
@@ -21,7 +21,7 @@
     --coa-flex-grow=1
     --width=80%
     --background-color=transparent
-/>
+/>-->
 
 
 <main style="height: 200vh;">

@@ -24,7 +24,6 @@
 
 <header class="{y > 0 ? 'scrolled' : ''}">
     <div>
-        <Hamburger></Hamburger>
         <!--
         <div id="menuToggle">
             <input type="checkbox" />
@@ -65,6 +64,7 @@
                 on:click={() => activeLink = ''}>{callToAction.linkTitle}</a>
             </div>
         {/if}
+        <Hamburger></Hamburger>
     </div>
 </header>
 
