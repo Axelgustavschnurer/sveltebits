@@ -1,29 +1,47 @@
 <script>
+    export let links = [
+        {linkTitle: 'Link Ipsum', href: './'}, 
+        {linkTitle: 'Link Ipsum', href: './'}, 
+        {linkTitle: 'Link Ipsum', href: './'} 
+    ]
 
-export let links = [
-    {linkTitle: 'Link Ipsum', href: './'}, 
-    {linkTitle: 'Link Ipsum', href: './'}, 
-    {linkTitle: 'Link Ipsum', href: './'} 
-]
+    let activeLink
 
 </script>
 
 <div>
     <input type="checkbox">
     <svg viewBox="0 0 100 80" width="30" height="30">
-        <rect width="100" height="10"></rect>
-        <rect y="30" width="100" height="10"></rect>
-        <rect y="60" width="100" height="10"></rect>
+        <rect y="0" width="100" height="10"></rect>
+        <rect y="35" width="100" height="10"></rect>
+        <rect y="70" width="100" height="10"></rect>
     </svg>
     <nav>
         {#each links as link, i}
-            <a href={link.href}>{link.linkTitle}</a>
+            <a href={link.href} class={activeLink === `link${i}` ? 'active' : ''} on:click={() => activeLink = `link${i}`}>{link.linkTitle}</a>
         {/each}
     </nav>
 </div>
 
 <style>
 
+    :root {
+        --background-color: white;
+        --scroll-color: white;
+        --color-main: black;
+        --color-second: white;
+        --color-accent: cornflowerblue;
+        --width: ;
+        --py: 0px;
+        --px: 20px;
+        --gap: 50px;
+        --margin: auto;
+        --coa-pos: flex-end;
+        --coa-flex-grow: 0;
+        --nav-px: 25px;
+        --h2-flex-grow: 1;
+        --screen-size: ;
+    }
 
     div {
         /*
@@ -76,10 +94,16 @@ export let links = [
         padding: 15px;
         background-color: #fefefe;
         border-bottom: 2px solid #ececec;
+        text-decoration: unset;
+        color: unset;
     }
 
     nav > a:hover {
         background-color: #ececec;
+    }
+
+    .active {
+        border-bottom: 3px solid var(--color-accent);
     }
 
 </style>
