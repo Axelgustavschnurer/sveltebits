@@ -1,5 +1,4 @@
 <script>
-    import Link from '../links/link.svelte'
     import Hamburger from '../menus/hamburger.svelte';
 
     export let title = {title: 'Title Ipsum', href: './'}
@@ -42,9 +41,11 @@
                 on:click={() => activeLink = ''}>{callToAction.linkTitle}</a>
             </div>
         {/if}
-        <Hamburger 
-            links = {links}
-        />
+        <div class="hamburger-menu">
+            <Hamburger 
+                links = {links}
+            />
+        </div>
     </div>
 </header>
 
@@ -164,6 +165,11 @@
         outline: 3px solid var(--color-main);
     }
 
+    .hamburger-menu {
+        display: none;
+    }
+
+    /* set multiple breakpoints for different screen sizes? */
     @media screen and (max-width: 1200px) {
         header > div > nav {
             display: none;
@@ -171,6 +177,9 @@
 
         .call-to-action-wrapper {
             display: none;
+        }
+        .hamburger-menu {
+            display: unset;
         }
     }
 

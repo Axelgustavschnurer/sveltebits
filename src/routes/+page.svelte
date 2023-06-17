@@ -12,6 +12,7 @@
         {linkTitle: 'Read More', href: './'},
         {linkTitle: 'Read More', href: './'},
     ]}
+    --scroll-color=white
     --h2-flex-grow=1
     --coa-flex-grow=1
     --width=80%
