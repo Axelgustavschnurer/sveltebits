@@ -31,7 +31,12 @@
         --color-main: black;
         --color-second: white;
         --color-accent: cornflowerblue;
-        --hamburger-width: ;
+        --hamburger2-width: fit-content;
+        --hamburger2-height: 100%;
+        --hamburger2-py: 50px;
+        --hamburger2-px: 0;
+        --hamburger2-nav-left: 0;
+        --hamburger2-nav-a-textalign: left;
     }
 
     div {
@@ -52,7 +57,13 @@
         
         /* Temp maybe (hopefully)*/
         position: absolute;
+        z-index: 3;
         opacity: 0;
+    }
+
+    svg {
+        position: relative;
+        z-index: 2;
     }
 
     input[type="checkbox"]:checked ~ nav {
@@ -63,8 +74,11 @@
         background-color: #fefefe;
         display: none;
         position: absolute;
-        width: 100%;
-        top: 100%;
+        top: 0;
+        padding: var(--hamburger2-py) var(--hamburger2-px);
+        width: var(--hamburger2-width);
+        height: var(--hamburger2-height);
+        z-index: 1; 
         /* 
             Assuming that the menu is located inside an element containing a position of  
             absolute, fixed, relative or sticky the top: 100%; value will place the 
@@ -76,15 +90,17 @@
         /*
             Actually it kinda makes perfect sense, refer to comment on div styling above
         */
-        left: 0;
+        left: var(--hamburger2-nav-left); /* Set initial for right */
+        right: 0;
     }
 
     nav > a {
         display: block;
         padding: 15px;
-        border-bottom: 2px solid #ececec;
+        font-weight: bold;
         text-decoration: unset;
         color: unset;
+        text-align: var(--hamburger2-nav-a-textalign);
     }
 
     nav > a:hover {
