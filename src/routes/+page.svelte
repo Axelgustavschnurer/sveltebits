@@ -31,8 +31,4 @@
         background: linear-gradient(180deg, lightpink -10%, lightblue);
     }
 
-    :global(*) {
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
 </style>
