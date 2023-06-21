@@ -57,26 +57,19 @@ To publish your library to [npm](https://www.npmjs.com):
 npm publish
 ```
 
+> **_NOTE:_** This readme contains information for developers working on this project. For information on how to use the package go to [docs](./) (Not yet created) or [npm](https://www.npmjs.com/package/sveltebits).   
+
 ## Components
+
+### Footers
+
+#### [footer.svelte](./src/lib/footers/footer.svelte)
 
 ### Headers
 
 #### [header.svelte](./src/lib/headers/header.svelte)
 
-title = {title: '', href: ''}
-links = [{linkTitle: '', href: ''}]
-callToAction = ''
-displayCallToAction = true/false
-imageSource = ''
-export let altText = ''
+### Menus
 
---background-color: ;
---scroll-color: ;
---color-main: ;
---color-second: ;
---color-accent: ;
---width: ;
---py: ;
---px: ;
---gap: ;
---margin: ;
+#### [hamburger.svelte](./src/lib/headers/hamburger.svelte)
+#### [hamburger2.svelte](./src/lib/headers/hamburger.svelte)
