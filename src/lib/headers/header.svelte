@@ -52,11 +52,6 @@
 <style>
     
     :root {
-        --background-color: white;
-        --scroll-color: white;
-        --color-main: black;
-        --color-second: white;
-        --color-accent: cornflowerblue;
         --width: ;
         --py: 0px;
         --px: 20px;

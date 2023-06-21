@@ -20,12 +20,6 @@
 </footer>
 
 <style>
-    :root {
-        --background-color: white;
-        --color-main: black;
-        --color-second: white;
-        --color-accent: cornflowerblue;
-    }
 
     footer {
         border-top: 6px solid var(--color-accent);

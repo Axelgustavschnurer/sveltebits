@@ -26,11 +26,6 @@
 <style>
 
     :root {
-        --background-color: white;
-        --scroll-color: white;
-        --color-main: black;
-        --color-second: white;
-        --color-accent: cornflowerblue;
         --hamburger2-width: fit-content;
         --hamburger2-height: 100%;
         --hamburger2-py: 50px;
