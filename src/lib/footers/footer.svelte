@@ -9,7 +9,7 @@
 <style>
 
     :root {
-        --footer-grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Min width should be variable but nothing else i think? */
+        --footer-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Min width should be variable but nothing else i think? */
     }
 
     footer {

@@ -1,5 +1,6 @@
 <script>
     import Hamburger from '../menus/hamburger.svelte';
+    import Hamburger2 from '../menus/hamburger2.svelte';
 
     export let title = {title: 'Title Ipsum', href: './'}
     export let imageSource = ''
@@ -13,6 +14,8 @@
 
     export let callToAction = {linkTitle: 'Call To Action', href: './'}
     export let displayCallToAction = true
+
+    export let hamburgerType = 1;
 
     let y
     let activeLink
@@ -41,11 +44,20 @@
                 on:click={() => activeLink = ''}>{callToAction.linkTitle}</a>
             </div>
         {/if}
-        <div class="hamburger-menu">
-            <Hamburger 
-                links = {links}
-            />
-        </div>
+        {#if hamburgerType == 1}
+            <div class="hamburger-menu">
+                <Hamburger 
+                    links = {links}
+                />
+            </div>
+        {/if}
+        {#if hamburgerType == 2}
+            <div class="hamburger-menu">
+                <Hamburger2 
+                    links = {links}
+                />
+            </div>
+        {/if}
     </div>
 </header>
 
