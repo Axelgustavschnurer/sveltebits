@@ -96,6 +96,7 @@
         text-decoration: unset;
         color: unset;
         text-align: var(--hamburger2-nav-a-textalign);
+        border-radius: 3px;
     }
 
     nav > a:hover {
