@@ -23,12 +23,31 @@
 <main style="height: 200vh;">
 </main>
 
-<Footer />
+<Footer
+    --footer-grid-template-columns="1fr 1fr 1fr 1fr 1fr"
+        >
+    <div class="box">Test Test Test</div>
+    <div class="box">Test</div>
+    <div class="box">TestTestTestTest</div>
+    <div class="box">Test</div>
+    <div class="box">TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest</div>
+    <div class="box">TestTestTestTest</div>
+    <div class="box">TestTestTest</div>
+    <div class="box">TestTest</div>
+</Footer>
 
 <style>
     :global(body) {
         margin: 0;
         background: linear-gradient(180deg, lightpink -10%, lightblue);
+    }
+
+    .box {
+        background-color: red;
+        padding: 25px;
+        border-radius: 5px;
+        max-width: 100%;
+        word-break: break-all;
     }
 
 </style>
