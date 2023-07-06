@@ -23,17 +23,26 @@
 <main style="height: 200vh;">
 </main>
 
-<Footer
-    --footer-grid-template-columns="1fr 1fr 1fr 1fr 1fr"
-        >
+<Footer>
+    <div class="box">Test Test Test</div>
+    <div class="box">Test</div>
+    <div class="box">TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest</div>
+    <div class="box">Test Test Test</div>
+    <div class="box">Test</div>
+    <div class="box">TestTestTestTest</div>
     <div class="box">Test Test Test</div>
     <div class="box">Test</div>
     <div class="box">TestTestTestTest</div>
     <div class="box">Test</div>
-    <div class="box">TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest</div>
     <div class="box">TestTestTestTest</div>
-    <div class="box">TestTestTest</div>
-    <div class="box">TestTest</div>
+    <div class="box">Test Test Test</div>
+    <div class="box">Test</div>
+    <div class="box">TestTestTestTest</div>
+    <div class="box">Test</div>
+    <div class="box">TestTestTestTest</div>
+    <div class="box">Test Test Test</div>
+    <div class="box">Test</div>
+    <div class="box">TestTestTestTest</div>
 </Footer>
 
 <style>
@@ -46,7 +55,6 @@
         background-color: red;
         padding: 25px;
         border-radius: 5px;
-        max-width: 100%;
         word-break: break-all;
     }
 
