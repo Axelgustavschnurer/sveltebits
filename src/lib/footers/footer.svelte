@@ -20,6 +20,7 @@
         display: grid;
         grid-template-columns: var(--footer-grid-template-columns);
         grid-auto-rows: auto;
+        justify-items: center;
         gap: 15px;
     }
 
