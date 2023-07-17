@@ -7,9 +7,10 @@
     export let altText = ''
 
     export let links = [
-        {linkTitle: 'Link Ipsum', href: './'}, 
-        {linkTitle: 'Link Ipsum', href: './'}, 
-        {linkTitle: 'Link Ipsum', href: './'} 
+        {linkTitle: 'Read More', href: './'},
+        {linkTitle: 'Read More', href: './'},
+        {linkTitle: 'Read More', href: './'},
+        {linkTitle: 'Read More', href: './'},
     ]
 
     export let callToAction = {linkTitle: 'Call To Action', href: './'}
@@ -32,7 +33,7 @@
                 {title.title}
             </a>
         </h2>
-        <nav>
+       <nav>
             {#each links as link, i}
                 <a href={link.href} class={activeLink === `link${i}` ? 'active' : ''} on:click={() => activeLink = `link${i}`}>{link.linkTitle}</a>
             {/each}
