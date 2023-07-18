@@ -84,8 +84,4 @@
         background-color: #ececec;
     }
 
-    .active {
-        border-bottom: 3px solid var(--color-accent);
-    }
-
 </style>

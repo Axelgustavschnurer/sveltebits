@@ -9,15 +9,6 @@
 </script>
 
 <Header 
-    imageSource="./logo.svg"
-    title={{title: 'Title Ipsum', href: './'}}
-    callToAction={{linkTitle: 'Button Ipsum', href: './'}}
-    links={[
-        {linkTitle: 'Read More', href: './'},
-        {linkTitle: 'Read More', href: './'},
-        {linkTitle: 'Read More', href: './'},
-        {linkTitle: 'Read More', href: './'},
-    ]}
     --header-scroll-color=white
     --header-width=80%
     --background-color=transparent
