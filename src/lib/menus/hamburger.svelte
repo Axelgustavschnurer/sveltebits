@@ -5,8 +5,6 @@
         {linkTitle: 'Link Ipsum', href: './'} 
     ]
 
-    let activeLink
-
 </script>
 
 <div>

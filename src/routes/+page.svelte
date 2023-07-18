@@ -64,6 +64,8 @@
             {linkTitle: 'Read More', href: './'},
             {linkTitle: 'Read More', href: './'},
         ]}
+        --nav-width=250px
+        --nav-height=250px
     />
     <Map 
         imgSrc="logo.svg"

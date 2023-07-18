@@ -27,6 +27,8 @@
         --nav-font-weight: ;
         --nav-text-decoration: ;
         --nav-gap: 10px;
+        --nav-width: ;
+        --nav-height: ;
 
         --nav-nav-flex-direction: column;
 
@@ -34,6 +36,8 @@
     }
 
     div {
+        width: var(--nav-width);
+        height: var(--nav-height);
         padding: var(--nav-padding);
         justify-self: var(--nav-justify-self);
     }
