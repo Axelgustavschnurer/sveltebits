@@ -18,7 +18,7 @@
     </svg>
     <nav>
         {#each links as link, i}
-            <a href={link.href} class={activeLink === `link${i}` ? 'active' : ''} on:click={() => activeLink = `link${i}`}>{link.linkTitle}</a>
+            <a href={link.href}>{link.linkTitle}</a>
         {/each}
     </nav>
 </div>

@@ -1,11 +1,13 @@
 <script>
-    export let title;
+    export let caption;
     export let maplink;
+    export let imgSrc;
+    export let imgAlt;
 </script>
 
 <div>
-    {#if title}
-        <h3>{title}</h3>
+    {#if caption}
+        <h3>{caption}</h3>
     {/if}
     <iframe 
         src={maplink} 
@@ -13,12 +15,25 @@
     </iframe>
 </div>
 
+<noscript>
+    <div>
+        {#if caption}
+            <h3>{caption}</h3>
+        {/if}
+        <img src={imgSrc} alt={imgAlt}/>
+    </div>
+</noscript>
+
 <style>
 
     :root {
+        --map-justify-self: center;
         --map-iframe-width: 500px;
         --map-iframe-height: 500px;
-        --map-iframe-justify-self: ;
+    }
+
+    div {
+        justify-self: var(--map-justify-self)
     }
 
     iframe {
@@ -26,8 +41,14 @@
         border-radius: 3px;
         width: var(--map-iframe-width);
         height: var(--map-iframe-height);
-        justify-self: var(--map-iframe-justify-self);
         max-width:100%;
+    }
+
+    img {
+        border-radius: 3px;
+        width: var(--map-iframe-width);
+        height: var(--map-iframe-height);
+        object-fit: cover;
     }
 
     h3 {
