@@ -1,4 +1,5 @@
 // Reexport your entry components here
+import './main.css'
 export { default as Header } from './headers/header.svelte';
 export { default as Footer } from './footers/footer.svelte';
 export { default as Hamburger } from './menus/hamburger.svelte';
