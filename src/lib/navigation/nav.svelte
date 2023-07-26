@@ -4,7 +4,6 @@
         {linkTitle: 'Read More', href: './'},
         {linkTitle: 'Read More', href: './'},
         {linkTitle: 'Read More', href: './'},
-        {linkTitle: 'Read More', href: './'},
     ]
 </script>
 
@@ -15,6 +14,11 @@
     <nav>
         {#each links as link, i}
             <a href={link.href}>{link.linkTitle}</a>
+            {#if typeof link === 'Array'}
+                {#each link as sublink}
+                    <p>TEST</p>
+                {/each}
+            {/if}
         {/each}        
     </nav>  
 </div>

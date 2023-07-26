@@ -21,7 +21,11 @@
             <Nav
                 links={[
                     {linkTitle: 'Read More', href: './'},
-                    {linkTitle: 'Read More', href: './'},
+                    [
+                        {linkTitle: 'Read More', href: './'},
+                        {linkTitle: 'Read More', href: './'},
+                        {linkTitle: 'Read More', href: './'}
+                    ],
                     {linkTitle: 'Read More', href: './'},
                     {linkTitle: 'Read More', href: './'},
                 ]}
@@ -71,7 +75,7 @@
 <style>
     :global(body) {
         margin: 0;
-        background: linear-gradient(180deg, lightpink -10%, lightblue);
+        /*background: linear-gradient(180deg, lightpink -10%, lightblue);*/
     }
 
     .navigation {
