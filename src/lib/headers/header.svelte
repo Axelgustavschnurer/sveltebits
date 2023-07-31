@@ -1,29 +1,27 @@
-<script>
+<script>    
+    // Use to allow custom classes and styles
+    export let className = '';
+    export let unsetCSS = false;  
+    let defaultClass = unsetCSS ? '' : 'header';
+    export let style;
 
+    // Custom Values
     let y
 
 </script>
 
 <svelte:window bind:scrollY={y} />
 
-<header class="{y > 0 ? 'scrolled' : ''}">
+<header class="{y > 0 ? 'scrolled' : ''} {defaultClass} {className}" style="{style}">
     <div>
         <slot></slot>
     </div>
 </header>
 
 <style>
-    
-    :root {
-        --header-scroll-color: white;
-        --header-width: ;
-        --header-padding: 10px 20px;
-        --header-margin: auto;
-        --header-justify-content: space-between;
-    }
 
-    header {
-        padding: var(--header-padding);
+    .header {
+        padding: var(--padding, 10px 20px);
         top: 0;
         position: sticky;
         background-color: var(--background-color);
@@ -34,16 +32,16 @@
     }
 
     .scrolled {
-		background-color: var(--header-scroll-color);
+		background-color: var(--scroll-color, white);
         transition: background-color .2s;
 	}
 
     header > div {
         display: flex;
         align-items: center;
-        justify-content: var(--header-justify-content);
-        margin: var(--header-margin);
-        width: var(--header-width);
+        justify-content: var(--justify-content, space-between);
+        margin: var(---margin, auto);
+        width: var(--width);
     }
 
 </style>

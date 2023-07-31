@@ -14,7 +14,7 @@
 
 </script>
 
-<div class={`${defaultClass} ${className}`} style="{style}">
+<div class="{defaultClass} {className}" style="{style}">
     <a href={href}>
         <img src={imgSrc} alt={imgAlt}>
         <slot></slot>

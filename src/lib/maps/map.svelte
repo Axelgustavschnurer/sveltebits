@@ -13,7 +13,7 @@
 
 </script>
 
-<div class={`${defaultClass} ${className}`} style="{style}">
+<div class="{defaultClass} {className}" style="{style}">
     {#if caption}
         <h3>{caption}</h3>
     {/if}
@@ -24,7 +24,7 @@
 </div>
 
 <noscript>
-    <div class={`${defaultClass} ${className}`} style="{style}">
+    <div class="{defaultClass} {className}" style="{style}">
         {#if caption}
             <h3>{caption}</h3>
         {/if}

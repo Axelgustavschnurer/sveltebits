@@ -9,7 +9,7 @@
     export let href = './'
 </script>
 
-<a href={href} class={`${defaultClass} ${className}`} style="{style}">
+<a href={href} class="{defaultClass} {className}" style="{style}">
     <slot></slot>
 </a>
 

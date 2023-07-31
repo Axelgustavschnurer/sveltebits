@@ -9,8 +9,7 @@
 </script>
 
 <Header 
-    --header-scroll-color=white
-    --header-width=80%
+    --width=90%
     --background-color=transparent
 >
         <Logo imgAlt="Logo" imgSrc="logo.svg" href="./"
@@ -46,7 +45,7 @@
 
 <Footer>
     <Nav
-        caption=test
+        caption="Test"
         links={[
             {linkTitle: 'Read More', href: './'},
             {linkTitle: 'Read More', href: './'},
@@ -54,9 +53,9 @@
             {linkTitle: 'Read More', href: './'},
         ]}
         --width=250px
-        --height=250px
     />
     <Map 
+        className="test"
         imgSrc="logo.svg"
         imgAlt="Karta"
         caption="Hitta Hit"
@@ -67,7 +66,7 @@
 <style>
     :global(body) {
         margin: 0;
-        /*background: linear-gradient(180deg, lightpink -10%, lightblue);*/
+        background: linear-gradient(180deg, lightpink -10%, lightblue);
     }
 
     .navigation {
