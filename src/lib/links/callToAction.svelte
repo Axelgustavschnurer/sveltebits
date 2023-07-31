@@ -1,8 +1,17 @@
 <script>
+    // Use to allow custom classes and styles
+    export let className = '';
+    export let unsetCSS = false;  
+    let defaultClass = unsetCSS ? '' : 'call-to-action';
+    export let style;
+
+    // Custom Values
     export let href = './'
 </script>
 
-<a href={href} class="call-to-action"><slot></slot></a>
+<a href={href} class={`${defaultClass} ${className}`} style="{style}">
+    <slot></slot>
+</a>
 
 <style>
 

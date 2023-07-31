@@ -1,14 +1,20 @@
 <!-- Component for a logo image which may have text accompanying it -->
 
 <script>
+    // Use to allow custom classes and styles
+    export let className = '';
+    export let unsetCSS = false;  
+    let defaultClass = unsetCSS ? '' : '';
+    export let style;
 
+    // Custom Values
     export let href;
     export let imgSrc;
     export let imgAlt;
 
 </script>
 
-<div>
+<div class={`${defaultClass} ${className}`} style="{style}">
     <a href={href}>
         <img src={imgSrc} alt={imgAlt}>
         <slot></slot>
@@ -16,17 +22,6 @@
 </div>
 
 <style>
-    :root {
-        --logo-padding: ;
-        --logo-flex-direction: row;
-        --logo-align-items: center;
-        --logo-justify-content: ;
-        --logo-gap: ;
-
-        --logo-img-width: 50px;
-        --logo-img-height: 50px;
-        --logo-img-object-fit: contain;
-    }
 
     a, a:active, a:visited, a:active {
         color: var(--color-main);
@@ -34,18 +29,18 @@
     }
 
     a {
-        padding: var(--logo-padding);
+        padding: var(--padding);
         display: flex;
-        flex-direction: var(--logo-flex-direction);
-        align-items: var(--logo-align-items);
-        justify-content: var(--logo-justify-content);
-        gap: var(--logo-gap);   
+        flex-direction: var(--flex-direction, row);
+        align-items: var(--align-items, center);
+        justify-content: var(--justify-content);
+        gap: var(--gap);   
     }
 
     img {
-        width: var(--logo-img-width);
-        height: var(--logo-img-width);
-        object-fit: var(--logo-img-object-fit);
+        width: var(--img-width, 50px);
+        height: var(--img-width, 50px);
+        object-fit: var(--img-object-fit, contain);
     }
 
 </style>

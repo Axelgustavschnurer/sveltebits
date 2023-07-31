@@ -1,4 +1,11 @@
 <script>
+    // Use to allow custom classes and styles
+    export let className = '';
+    export let unsetCSS = false;  
+    let defaultClass = unsetCSS ? '' : 'hamburger';
+    export let style;
+
+    // Custom Values
     export let links = [
         {linkTitle: 'Link Ipsum', href: './'}, 
         {linkTitle: 'Link Ipsum', href: './'}, 
@@ -7,7 +14,7 @@
 
 </script>
 
-<div>
+<div class={`${defaultClass} ${className}`} style="{style}">
     <input type="checkbox">
     <svg viewBox="0 0 100 80" width="30" height="30">
         <rect y="0" width="100" height="10"></rect>
@@ -23,11 +30,7 @@
 
 <style>
 
-    :root {
-        --hamburger-width: ;
-    }
-
-    div {
+    .hamburger {
         /*
             Oh i see if you set a position on this div it means that the "nearest
             positioned ancestor" of the navbar is this div instead of the header. 

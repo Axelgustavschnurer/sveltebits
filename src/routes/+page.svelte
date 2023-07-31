@@ -14,7 +14,7 @@
     --background-color=transparent
 >
         <Logo imgAlt="Logo" imgSrc="logo.svg" href="./"
-            --logo-img-width=75px --logo-img-height=75px>
+            --img-width=75px --img-height=75px>
             <h3>SvelteBits</h3>
         </Logo>
         <div class="navigation">
