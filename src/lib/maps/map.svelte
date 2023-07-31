@@ -2,7 +2,7 @@
     // Use to allow custom classes and styles
     export let className = '';
     export let unsetCSS = false;  
-    let defaultClass = unsetCSS ? '' : '';
+    let defaultClass = unsetCSS ? '' : 'map';
     export let style;
 
     // Custom Values
@@ -34,7 +34,7 @@
 
 <style>
 
-    div {
+    .map {
         justify-self: var(--justify-self, center)
     }
 

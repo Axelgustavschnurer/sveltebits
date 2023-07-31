@@ -1,4 +1,11 @@
 <script>
+    // Use to allow custom classes and styles
+    export let className = '';
+    export let unsetCSS = false;  
+    let defaultClass = unsetCSS ? '' : 'navigation';
+    export let style;
+
+    // Custom Values
     export let caption = ''
     export let links = [
         {linkTitle: 'Read More', href: './'},
@@ -7,56 +14,38 @@
     ]
 </script>
 
-<div>
+<div class={`${defaultClass} ${className}`} style="{style}">
     {#if caption}
         <h3>{caption}</h3>
     {/if}
     <nav>
         {#each links as link, i}
             <a href={link.href}>{link.linkTitle}</a>
-            {#if typeof link === 'Array'}
-                {#each link as sublink}
-                    <p>TEST</p>
-                {/each}
-            {/if}
         {/each}        
     </nav>  
 </div>
 
 <style>
 
-    :root {
-        --nav-padding: ;
-        --nav-justify-self: center;
-        --nav-font-weight: ;
-        --nav-text-decoration: ;
-        --nav-gap: 10px;
-        --nav-width: ;
-        --nav-height: ;
-
-        --nav-nav-flex-direction: column;
-
-        --nav-a-padding: ;
-    }
-
-    div {
-        width: var(--nav-width);
-        height: var(--nav-height);
-        padding: var(--nav-padding);
-        justify-self: var(--nav-justify-self);
+    .navigation {
+        width: var(--width);
+        height: var(--height);
+        padding: var(--padding);
+        justify-self: var(--justify-self, center);
     }
 
     nav {
         display: flex;
-        flex-direction: var(--nav-nav-flex-direction);
-        gap: var(--nav-gap);
+        font-weight: var(--font-weight);
+        flex-direction: var(--flex-direction, column);
+        gap: var(--gap, 10px);
     }
 
     a, a:active, a:visited, a:active {
         color: var(--color-main);
-        font-weight: var(--nav-font-weight);
-        text-decoration: var(--nav-nav-flex-direction);
-        padding: var(--nav-a-padding)
+        text-decoration: var(--text-decoration);
+        padding: var(--a-padding);
+        width: fit-content;
     }
 
     a:hover {

@@ -21,24 +21,18 @@
             <Nav
                 links={[
                     {linkTitle: 'Read More', href: './'},
-                    [
-                        {linkTitle: 'Read More', href: './'},
-                        {linkTitle: 'Read More', href: './'},
-                        {linkTitle: 'Read More', href: './'}
-                    ],
                     {linkTitle: 'Read More', href: './'},
                     {linkTitle: 'Read More', href: './'},
                 ]}
-                --nav-nav-flex-direction=row
-                --nav-font-weight=bold
-                --nav-a-padding=8px
-                --nav-padding="0 20px"
+                --flex-direction=row
+                --font-weight=bold
+                --a-padding=8px
+                --padding="0 20px"
             />
             <CallToAction>Button Ipsum</CallToAction> 
         </div>
         <div class="hamburger-menu">
             <Hamburger links={[
-                {linkTitle: 'Read More', href: './'},
                 {linkTitle: 'Read More', href: './'},
                 {linkTitle: 'Read More', href: './'},
                 {linkTitle: 'Read More', href: './'},
@@ -59,8 +53,8 @@
             {linkTitle: 'Read More', href: './'},
             {linkTitle: 'Read More', href: './'},
         ]}
-        --nav-width=250px
-        --nav-height=250px
+        --width=250px
+        --height=250px
     />
     <Map 
         imgSrc="logo.svg"
@@ -85,7 +79,7 @@
         display: none;
     }
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 800px) {
         .hamburger-menu {
             display: unset;
         }
