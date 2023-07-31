@@ -1,11 +1,19 @@
 <script>
+    // Use to allow custom classes and styles
+    export let className = '';
+    export let unsetCSS = false;  
+    let defaultClass = unsetCSS ? '' : '';
+    export let style;
+
+    // Custom Values
     export let caption;
     export let maplink;
     export let imgSrc;
     export let imgAlt;
+
 </script>
 
-<div>
+<div class={`${defaultClass} ${className}`} style="{style}">
     {#if caption}
         <h3>{caption}</h3>
     {/if}
@@ -16,7 +24,7 @@
 </div>
 
 <noscript>
-    <div>
+    <div class={`${defaultClass} ${className}`} style="{style}">
         {#if caption}
             <h3>{caption}</h3>
         {/if}
@@ -26,33 +34,26 @@
 
 <style>
 
-    :root {
-        --map-justify-self: center;
-        --map-iframe-width: 500px;
-        --map-iframe-height: 500px;
-    }
-
     div {
-        justify-self: var(--map-justify-self)
+        justify-self: var(--justify-self, center)
     }
 
     iframe {
         border: 0;
         border-radius: 3px;
-        width: var(--map-iframe-width);
-        height: var(--map-iframe-height);
-        max-width:100%;
+        width: var(--width, 250px);
+        height: var(--height, 250px);
     }
 
     img {
         border-radius: 3px;
-        width: var(--map-iframe-width);
-        height: var(--map-iframe-height);
+        width: var(--width, 250px);
+        height: var(--width, 250px);
         object-fit: cover;
     }
 
     h3 {
-        width: var(--map-iframe-width);
+        width: var(--width, 250px);
     }
 
 </style>
