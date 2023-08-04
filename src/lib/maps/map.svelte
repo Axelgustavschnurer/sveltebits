@@ -7,9 +7,11 @@
 
     // Custom Values
     export let caption;
-    export let maplink;
-    export let imgSrc;
-    export let imgAlt;
+    export let mapLink;
+    export let src;
+    export let alt;
+    export let address;
+    export let addressLink;
 
 </script>
 
@@ -18,9 +20,12 @@
         <h3>{caption}</h3>
     {/if}
     <iframe 
-        src={maplink} 
+        src={mapLink} 
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="map">
     </iframe>
+    {#if address}
+        <a href="{addressLink}">{address}</a>
+    {/if}
 </div>
 
 <noscript>
@@ -28,14 +33,19 @@
         {#if caption}
             <h3>{caption}</h3>
         {/if}
-        <img src={imgSrc} alt={imgAlt}/>
+        <img src={src} alt={alt}/>
+        {#if address}
+            <a href="{addressLink}">{address}</a>
+        {/if}
     </div>
 </noscript>
 
 <style>
 
     .map {
-        justify-self: var(--justify-self, center)
+        justify-self: var(--justify-self, center);
+        display: flex;
+        flex-direction: column;
     }
 
     iframe {
@@ -54,6 +64,12 @@
 
     h3 {
         width: var(--width, 250px);
+    }
+
+    a {
+        width: var(--width, 250px);
+        color: var(--color-main);
+        padding: 10px 0;
     }
 
 </style>
