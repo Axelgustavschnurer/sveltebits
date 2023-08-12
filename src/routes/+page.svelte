@@ -18,6 +18,7 @@
         </Logo>
         <div class="navigation">
             <Nav
+                style="width:unset;"
                 links={[
                     {linkTitle: 'Read More', href: './'},
                     {linkTitle: 'Read More', href: './'},

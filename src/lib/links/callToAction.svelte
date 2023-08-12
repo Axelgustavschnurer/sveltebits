@@ -22,8 +22,8 @@
 
     .call-to-action {
         text-align: center;
-        padding: 15px 30px;
-        border-radius: 5px;
+        padding: var(--padding, 15px 30px);
+        border-radius: var(--border-radius, 5px);
         background-color: var(--color-accent);
         color: var(--color-second);
     }

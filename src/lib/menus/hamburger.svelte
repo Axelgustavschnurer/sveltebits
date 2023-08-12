@@ -12,11 +12,13 @@
         {linkTitle: 'Link Ipsum', href: './'} 
     ]
 
+    export let hamburgerColor = "black"
+
 </script>
 
 <div class="{defaultClass} {className}" style="{style}">
     <input type="checkbox">
-    <svg viewBox="0 0 100 80" width="30" height="30">
+    <svg viewBox="0 0 100 80" fill="{hamburgerColor}" width="30" height="30">
         <rect y="0" width="100" height="10"></rect>
         <rect y="35" width="100" height="10"></rect>
         <rect y="70" width="100" height="10"></rect>
